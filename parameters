@@ -1,0 +1,42 @@
+{
+    "goal" : {
+        "player_name" : "PYBLUE",
+	"rival_name" : "PYRED"
+    },
+    "hidden_layer_shape" : {
+        "player_name" : "10,9",
+        "rival_name" : "10,9"
+    },	
+    "agent" : {
+        "max_training_steps" : 1e5,
+        "experience_memory_size" : 1e5,
+        "replay_start_size" : 10000,
+        "replay_batch_size" : 32,
+        "use_target_network" : true,
+        "target_network_update_frequency" : 2000,
+        "learning_rate" : 0.01,
+        "gamma" : 0.98,
+	"delta" : 0.001,
+        "epsilon_max" : 1.0,
+        "epsilon_min" : 0.05,
+        "epsilon_decay_final_step" : 5e4,
+        "seed" : 1985,
+        "summary_filename_prefix" : "logs/DQL_",
+        "load_trained_model" : true,
+        "save_dir" : "trained_models/",
+        "load_dir" : "trained_models/",
+        "save_freq" : 20,
+	"frame_skip" : 0
+    },
+    "emulator" : {
+        "type" : "Gameboy",
+        "gamerom" : "blue.gb",
+        "bootrom_file" : null,
+        "profiling" : false,
+        "disable_renderer" : false,
+        "sound" : false,
+	"color_palette" : "Blue",
+        "gamespeed" : 0,
+	"test" : false
+    }
+}
