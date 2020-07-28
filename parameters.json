@@ -1,0 +1,61 @@
+{
+    "goal" : {
+        "player_name" : "PYBLUE",
+	"rival_name" : "PYRED"
+    },
+    "hidden_layer_shape" : {
+        "player_name" : "120,32,16",
+        "rival_name" : "100,50,10"
+    },
+    "strategy" : {
+        "learning_rate" : 0.1,
+        "gamma" : 0.98,
+	"delta" : 0.0001,
+        "epsilon_max" : 1.0,
+        "epsilon_min" : 0.01,
+        "epsilon_decay_final_step" : 1e3,
+	"replay_start_size": 1000,
+	"replay_batch_size": 200,
+	"batch_size": 100,
+	"memory": 1e6,
+        "load_trained_model" : true,
+        "save_dir" : "trained_models/",
+        "load_dir" : "trained_models/"
+    },	
+    "agent" : {
+        "max_training_steps" : 2e4,
+        "learning_rate" : 0.1,
+        "gamma" : 0.98,
+	"delta" : 0.0001,
+        "epsilon_max" : 1.0,
+        "epsilon_min" : 0.05,
+        "epsilon_decay_final_step" : 2e4,
+        "seed" : 1985,
+	"replay_start_size": 100,
+	"replay_batch_size": 100,
+	"memory": 1e6,
+        "summary_filename_prefix" : "logs/DQL_",
+        "load_trained_model" : true,
+        "save_dir" : "trained_models/",
+        "load_dir" : "trained_models/",
+        "save_freq" : 1,
+	"state_save_freq" : 100,
+	"state_back_freq" : 50,
+	"nn_save_freq" : 5,
+	"frame_skip" : 18
+    },
+    "emulator" : {
+        "type" : "Gameboy",
+        "gamerom" : "blue.gb",
+        "bootrom_file" : null,
+        "profiling" : false,
+        "disable_renderer" : true,
+        "sound" : false,
+	"color_palette" : "Blue",
+        "gamespeed" : 0,
+	"test" : false
+    }
+}
+
+
+
